@@ -1,23 +1,27 @@
-import 'package:github_search/domain/models/user_items.dart';
-
 class User {
-  int? totalCount;
-  bool? incompleteResults;
-  List<UserItems>? items;
+  String login;
+  int id;
+  String avatarUrl;
+  String htmlUrl;
+  String url;
+  String reposUrl;
 
-  User({
-    this.totalCount,
-    this.incompleteResults,
-    this.items,
-  });
+  User(
+      {required this.login,
+      required this.id,
+      required this.avatarUrl,
+      required this.htmlUrl,
+      required this.url,
+      required this.reposUrl});
 
-  @override
-  String toString() =>
-      'User(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';
-
-  User.fromJson(Map<String, dynamic> json) {
-    totalCount = json['total_count'];
-    incompleteResults = json['incomplete_results'];
-    items = List.from(json['items']).map((e) => UserItems.fromJson(e)).toList();
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      login: json['login'] ?? '',
+      id: json['id'] ?? 0,
+      avatarUrl: json['avatar_url'] ?? '',
+      htmlUrl: json['html_url'] ?? '',
+      url: json['url'] ?? '',
+      reposUrl: json['repos_url'] ?? '',
+    );
   }
 }

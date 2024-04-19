@@ -225,7 +225,7 @@ mixin _$UserSearchState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User user) data,
+    required TResult Function(UserSearch user) data,
     required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -233,7 +233,7 @@ mixin _$UserSearchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User user)? data,
+    TResult? Function(UserSearch user)? data,
     TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -241,7 +241,7 @@ mixin _$UserSearchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User user)? data,
+    TResult Function(UserSearch user)? data,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -331,7 +331,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User user) data,
+    required TResult Function(UserSearch user) data,
     required TResult Function(String errorMessage) error,
   }) {
     return initial();
@@ -342,7 +342,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User user)? data,
+    TResult? Function(UserSearch user)? data,
     TResult? Function(String errorMessage)? error,
   }) {
     return initial?.call();
@@ -353,7 +353,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User user)? data,
+    TResult Function(UserSearch user)? data,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -445,7 +445,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User user) data,
+    required TResult Function(UserSearch user) data,
     required TResult Function(String errorMessage) error,
   }) {
     return loading();
@@ -456,7 +456,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User user)? data,
+    TResult? Function(UserSearch user)? data,
     TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
@@ -467,7 +467,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User user)? data,
+    TResult Function(UserSearch user)? data,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -525,7 +525,7 @@ abstract class _$$DataImplCopyWith<$Res> {
           _$DataImpl value, $Res Function(_$DataImpl) then) =
       __$$DataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user});
+  $Res call({UserSearch user});
 }
 
 /// @nodoc
@@ -544,7 +544,7 @@ class __$$DataImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as UserSearch,
     ));
   }
 }
@@ -555,7 +555,7 @@ class _$DataImpl implements _Data {
   const _$DataImpl({required this.user});
 
   @override
-  final User user;
+  final UserSearch user;
 
   @override
   String toString() {
@@ -584,7 +584,7 @@ class _$DataImpl implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User user) data,
+    required TResult Function(UserSearch user) data,
     required TResult Function(String errorMessage) error,
   }) {
     return data(user);
@@ -595,7 +595,7 @@ class _$DataImpl implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User user)? data,
+    TResult? Function(UserSearch user)? data,
     TResult? Function(String errorMessage)? error,
   }) {
     return data?.call(user);
@@ -606,7 +606,7 @@ class _$DataImpl implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User user)? data,
+    TResult Function(UserSearch user)? data,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -655,9 +655,9 @@ class _$DataImpl implements _Data {
 }
 
 abstract class _Data implements UserSearchState {
-  const factory _Data({required final User user}) = _$DataImpl;
+  const factory _Data({required final UserSearch user}) = _$DataImpl;
 
-  User get user;
+  UserSearch get user;
   @JsonKey(ignore: true)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -730,7 +730,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(User user) data,
+    required TResult Function(UserSearch user) data,
     required TResult Function(String errorMessage) error,
   }) {
     return error(errorMessage);
@@ -741,7 +741,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(User user)? data,
+    TResult? Function(UserSearch user)? data,
     TResult? Function(String errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -752,7 +752,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(User user)? data,
+    TResult Function(UserSearch user)? data,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {

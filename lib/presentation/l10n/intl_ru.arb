@@ -1,4 +1,9 @@
 {
     "language": "язык",
-    "find_user_on_github":"Найти пользователя Github"
+    "find_user_on_github": "Найти пользователя Github",
+    "app_name": "Github Поиск",
+    "enter_a_nickname": "введите никнейм",
+    "user": "пользователь",
+    "there_is_no_such_user":"такого пользователя не существует",
+    "search":"поиск"
 }

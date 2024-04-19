@@ -1,4 +1,9 @@
 {
     "language": "language",
-    "find_user_on_github":"Find user on Github"
+    "find_user_on_github": "Find user on Github",
+    "app_name": "Github Search",
+    "enter_a_nickname": "enter a nickname",
+    "user": "user",
+    "there_is_no_such_user":"there is no such user",
+    "search":"search"
 }
