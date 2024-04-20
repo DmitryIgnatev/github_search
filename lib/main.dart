@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search/domain/blocs/locale_bloc/locale_bloc.dart';
 import 'package:github_search/domain/blocs/user_search_bloc/user_search_bloc.dart';
 import 'package:github_search/data/repository/user_git_repository.dart';
 import 'package:github_search/presentation/screens/git_user_search_screen/git_user_search_screen.dart';
@@ -15,18 +16,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      locale: const Locale("en"),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: RepositoryProvider(
-        create: (context) => UserGitRepository(),
-        child: BlocProvider(
-          create: (context) => UserSearchBloc(
-            userGitRepository: context.read(),
+    return RepositoryProvider(
+      create: (context) => UserGitRepository(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => UserSearchBloc(
+              userGitRepository: context.read(),
+            ),
           ),
-          child: const UserGitSearchView(),
+          BlocProvider<LocaleBloc>(
+            create: (context) => LocaleBloc(),
+          ),
+        ],
+        child: BlocBuilder<LocaleBloc, LocaleState>(
+          builder: (context, state) {
+            context.read<LocaleBloc>().add(const LocaleLoadEvent());
+            return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                locale: state.locale,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                supportedLocales: AppLocalizations.supportedLocales,
+                home: const UserGitSearchView());
+          },
         ),
       ),
     );
