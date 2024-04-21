@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_search_bloc.dart';
+part of 'repositories_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,59 +15,59 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$UserSearchEvent {
-  String get userId => throw _privateConstructorUsedError;
+mixin _$RepositoriesEvent {
+  String get reposUrl => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userId) search,
+    required TResult Function(String reposUrl) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userId)? search,
+    TResult? Function(String reposUrl)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userId)? search,
+    TResult Function(String reposUrl)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Search value) search,
+    required TResult Function(_Load value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Load value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Search value)? search,
+    TResult Function(_Load value)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserSearchEventCopyWith<UserSearchEvent> get copyWith =>
+  $RepositoriesEventCopyWith<RepositoriesEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserSearchEventCopyWith<$Res> {
-  factory $UserSearchEventCopyWith(
-          UserSearchEvent value, $Res Function(UserSearchEvent) then) =
-      _$UserSearchEventCopyWithImpl<$Res, UserSearchEvent>;
+abstract class $RepositoriesEventCopyWith<$Res> {
+  factory $RepositoriesEventCopyWith(
+          RepositoriesEvent value, $Res Function(RepositoriesEvent) then) =
+      _$RepositoriesEventCopyWithImpl<$Res, RepositoriesEvent>;
   @useResult
-  $Res call({String userId});
+  $Res call({String reposUrl});
 }
 
 /// @nodoc
-class _$UserSearchEventCopyWithImpl<$Res, $Val extends UserSearchEvent>
-    implements $UserSearchEventCopyWith<$Res> {
-  _$UserSearchEventCopyWithImpl(this._value, this._then);
+class _$RepositoriesEventCopyWithImpl<$Res, $Val extends RepositoriesEvent>
+    implements $RepositoriesEventCopyWith<$Res> {
+  _$RepositoriesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,45 +77,44 @@ class _$UserSearchEventCopyWithImpl<$Res, $Val extends UserSearchEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? reposUrl = null,
   }) {
     return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      reposUrl: null == reposUrl
+          ? _value.reposUrl
+          : reposUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$SearchImplCopyWith<$Res>
-    implements $UserSearchEventCopyWith<$Res> {
-  factory _$$SearchImplCopyWith(
-          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
-      __$$SearchImplCopyWithImpl<$Res>;
+abstract class _$$LoadImplCopyWith<$Res>
+    implements $RepositoriesEventCopyWith<$Res> {
+  factory _$$LoadImplCopyWith(
+          _$LoadImpl value, $Res Function(_$LoadImpl) then) =
+      __$$LoadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String reposUrl});
 }
 
 /// @nodoc
-class __$$SearchImplCopyWithImpl<$Res>
-    extends _$UserSearchEventCopyWithImpl<$Res, _$SearchImpl>
-    implements _$$SearchImplCopyWith<$Res> {
-  __$$SearchImplCopyWithImpl(
-      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+class __$$LoadImplCopyWithImpl<$Res>
+    extends _$RepositoriesEventCopyWithImpl<$Res, _$LoadImpl>
+    implements _$$LoadImplCopyWith<$Res> {
+  __$$LoadImplCopyWithImpl(_$LoadImpl _value, $Res Function(_$LoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? reposUrl = null,
   }) {
-    return _then(_$SearchImpl(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+    return _then(_$LoadImpl(
+      reposUrl: null == reposUrl
+          ? _value.reposUrl
+          : reposUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -123,58 +122,59 @@ class __$$SearchImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchImpl implements _Search {
-  const _$SearchImpl({required this.userId});
+class _$LoadImpl implements _Load {
+  const _$LoadImpl({required this.reposUrl});
 
   @override
-  final String userId;
+  final String reposUrl;
 
   @override
   String toString() {
-    return 'UserSearchEvent.search(userId: $userId)';
+    return 'RepositoriesEvent.load(reposUrl: $reposUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchImpl &&
-            (identical(other.userId, userId) || other.userId == userId));
+            other is _$LoadImpl &&
+            (identical(other.reposUrl, reposUrl) ||
+                other.reposUrl == reposUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userId);
+  int get hashCode => Object.hash(runtimeType, reposUrl);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+  _$$LoadImplCopyWith<_$LoadImpl> get copyWith =>
+      __$$LoadImplCopyWithImpl<_$LoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userId) search,
+    required TResult Function(String reposUrl) load,
   }) {
-    return search(userId);
+    return load(reposUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userId)? search,
+    TResult? Function(String reposUrl)? load,
   }) {
-    return search?.call(userId);
+    return load?.call(reposUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userId)? search,
+    TResult Function(String reposUrl)? load,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(userId);
+    if (load != null) {
+      return load(reposUrl);
     }
     return orElse();
   }
@@ -182,50 +182,50 @@ class _$SearchImpl implements _Search {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Search value) search,
+    required TResult Function(_Load value) load,
   }) {
-    return search(this);
+    return load(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Load value)? load,
   }) {
-    return search?.call(this);
+    return load?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Search value)? search,
+    TResult Function(_Load value)? load,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this);
+    if (load != null) {
+      return load(this);
     }
     return orElse();
   }
 }
 
-abstract class _Search implements UserSearchEvent {
-  const factory _Search({required final String userId}) = _$SearchImpl;
+abstract class _Load implements RepositoriesEvent {
+  const factory _Load({required final String reposUrl}) = _$LoadImpl;
 
   @override
-  String get userId;
+  String get reposUrl;
   @override
   @JsonKey(ignore: true)
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+  _$$LoadImplCopyWith<_$LoadImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$UserSearchState {
+mixin _$RepositoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSearch userSearch) data,
+    required TResult Function(List<Repository> repositories) loaded,
     required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -233,7 +233,7 @@ mixin _$UserSearchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSearch userSearch)? data,
+    TResult? Function(List<Repository> repositories)? loaded,
     TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -241,7 +241,7 @@ mixin _$UserSearchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSearch userSearch)? data,
+    TResult Function(List<Repository> repositories)? loaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -250,7 +250,7 @@ mixin _$UserSearchState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Data value) data,
+    required TResult Function(_Data value) loaded,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -258,7 +258,7 @@ mixin _$UserSearchState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Data value)? data,
+    TResult? Function(_Data value)? loaded,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -266,7 +266,7 @@ mixin _$UserSearchState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Data value)? data,
+    TResult Function(_Data value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -274,16 +274,16 @@ mixin _$UserSearchState {
 }
 
 /// @nodoc
-abstract class $UserSearchStateCopyWith<$Res> {
-  factory $UserSearchStateCopyWith(
-          UserSearchState value, $Res Function(UserSearchState) then) =
-      _$UserSearchStateCopyWithImpl<$Res, UserSearchState>;
+abstract class $RepositoriesStateCopyWith<$Res> {
+  factory $RepositoriesStateCopyWith(
+          RepositoriesState value, $Res Function(RepositoriesState) then) =
+      _$RepositoriesStateCopyWithImpl<$Res, RepositoriesState>;
 }
 
 /// @nodoc
-class _$UserSearchStateCopyWithImpl<$Res, $Val extends UserSearchState>
-    implements $UserSearchStateCopyWith<$Res> {
-  _$UserSearchStateCopyWithImpl(this._value, this._then);
+class _$RepositoriesStateCopyWithImpl<$Res, $Val extends RepositoriesState>
+    implements $RepositoriesStateCopyWith<$Res> {
+  _$RepositoriesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -300,7 +300,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UserSearchStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$RepositoriesStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -314,7 +314,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'UserSearchState.initial()';
+    return 'RepositoriesState.initial()';
   }
 
   @override
@@ -331,7 +331,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSearch userSearch) data,
+    required TResult Function(List<Repository> repositories) loaded,
     required TResult Function(String errorMessage) error,
   }) {
     return initial();
@@ -342,7 +342,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSearch userSearch)? data,
+    TResult? Function(List<Repository> repositories)? loaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return initial?.call();
@@ -353,7 +353,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSearch userSearch)? data,
+    TResult Function(List<Repository> repositories)? loaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -368,7 +368,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Data value) data,
+    required TResult Function(_Data value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -379,7 +379,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Data value)? data,
+    TResult? Function(_Data value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -390,7 +390,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Data value)? data,
+    TResult Function(_Data value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -401,7 +401,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements UserSearchState {
+abstract class _Initial implements RepositoriesState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -414,7 +414,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$UserSearchStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$RepositoriesStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -428,7 +428,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'UserSearchState.loading()';
+    return 'RepositoriesState.loading()';
   }
 
   @override
@@ -445,7 +445,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSearch userSearch) data,
+    required TResult Function(List<Repository> repositories) loaded,
     required TResult Function(String errorMessage) error,
   }) {
     return loading();
@@ -456,7 +456,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSearch userSearch)? data,
+    TResult? Function(List<Repository> repositories)? loaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
@@ -467,7 +467,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSearch userSearch)? data,
+    TResult Function(List<Repository> repositories)? loaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -482,7 +482,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Data value) data,
+    required TResult Function(_Data value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -493,7 +493,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Data value)? data,
+    TResult? Function(_Data value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -504,7 +504,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Data value)? data,
+    TResult Function(_Data value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -515,7 +515,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements UserSearchState {
+abstract class _Loading implements RepositoriesState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -525,12 +525,12 @@ abstract class _$$DataImplCopyWith<$Res> {
           _$DataImpl value, $Res Function(_$DataImpl) then) =
       __$$DataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserSearch userSearch});
+  $Res call({List<Repository> repositories});
 }
 
 /// @nodoc
 class __$$DataImplCopyWithImpl<$Res>
-    extends _$UserSearchStateCopyWithImpl<$Res, _$DataImpl>
+    extends _$RepositoriesStateCopyWithImpl<$Res, _$DataImpl>
     implements _$$DataImplCopyWith<$Res> {
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
@@ -538,13 +538,13 @@ class __$$DataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userSearch = null,
+    Object? repositories = null,
   }) {
     return _then(_$DataImpl(
-      userSearch: null == userSearch
-          ? _value.userSearch
-          : userSearch // ignore: cast_nullable_to_non_nullable
-              as UserSearch,
+      repositories: null == repositories
+          ? _value._repositories
+          : repositories // ignore: cast_nullable_to_non_nullable
+              as List<Repository>,
     ));
   }
 }
@@ -552,14 +552,20 @@ class __$$DataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DataImpl implements _Data {
-  const _$DataImpl({required this.userSearch});
+  const _$DataImpl({required final List<Repository> repositories})
+      : _repositories = repositories;
 
+  final List<Repository> _repositories;
   @override
-  final UserSearch userSearch;
+  List<Repository> get repositories {
+    if (_repositories is EqualUnmodifiableListView) return _repositories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_repositories);
+  }
 
   @override
   String toString() {
-    return 'UserSearchState.data(userSearch: $userSearch)';
+    return 'RepositoriesState.loaded(repositories: $repositories)';
   }
 
   @override
@@ -567,12 +573,13 @@ class _$DataImpl implements _Data {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataImpl &&
-            (identical(other.userSearch, userSearch) ||
-                other.userSearch == userSearch));
+            const DeepCollectionEquality()
+                .equals(other._repositories, _repositories));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userSearch);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_repositories));
 
   @JsonKey(ignore: true)
   @override
@@ -585,10 +592,10 @@ class _$DataImpl implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSearch userSearch) data,
+    required TResult Function(List<Repository> repositories) loaded,
     required TResult Function(String errorMessage) error,
   }) {
-    return data(userSearch);
+    return loaded(repositories);
   }
 
   @override
@@ -596,10 +603,10 @@ class _$DataImpl implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSearch userSearch)? data,
+    TResult? Function(List<Repository> repositories)? loaded,
     TResult? Function(String errorMessage)? error,
   }) {
-    return data?.call(userSearch);
+    return loaded?.call(repositories);
   }
 
   @override
@@ -607,12 +614,12 @@ class _$DataImpl implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSearch userSearch)? data,
+    TResult Function(List<Repository> repositories)? loaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(userSearch);
+    if (loaded != null) {
+      return loaded(repositories);
     }
     return orElse();
   }
@@ -622,10 +629,10 @@ class _$DataImpl implements _Data {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Data value) data,
+    required TResult Function(_Data value) loaded,
     required TResult Function(_Error value) error,
   }) {
-    return data(this);
+    return loaded(this);
   }
 
   @override
@@ -633,10 +640,10 @@ class _$DataImpl implements _Data {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Data value)? data,
+    TResult? Function(_Data value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
-    return data?.call(this);
+    return loaded?.call(this);
   }
 
   @override
@@ -644,21 +651,22 @@ class _$DataImpl implements _Data {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Data value)? data,
+    TResult Function(_Data value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _Data implements UserSearchState {
-  const factory _Data({required final UserSearch userSearch}) = _$DataImpl;
+abstract class _Data implements RepositoriesState {
+  const factory _Data({required final List<Repository> repositories}) =
+      _$DataImpl;
 
-  UserSearch get userSearch;
+  List<Repository> get repositories;
   @JsonKey(ignore: true)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -675,7 +683,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$UserSearchStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$RepositoriesStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -705,7 +713,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'UserSearchState.error(errorMessage: $errorMessage)';
+    return 'RepositoriesState.error(errorMessage: $errorMessage)';
   }
 
   @override
@@ -731,7 +739,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserSearch userSearch) data,
+    required TResult Function(List<Repository> repositories) loaded,
     required TResult Function(String errorMessage) error,
   }) {
     return error(errorMessage);
@@ -742,7 +750,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserSearch userSearch)? data,
+    TResult? Function(List<Repository> repositories)? loaded,
     TResult? Function(String errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -753,7 +761,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserSearch userSearch)? data,
+    TResult Function(List<Repository> repositories)? loaded,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -768,7 +776,7 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Data value) data,
+    required TResult Function(_Data value) loaded,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -779,7 +787,7 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Data value)? data,
+    TResult? Function(_Data value)? loaded,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -790,7 +798,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Data value)? data,
+    TResult Function(_Data value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -801,7 +809,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements UserSearchState {
+abstract class _Error implements RepositoriesState {
   const factory _Error(final String errorMessage) = _$ErrorImpl;
 
   String get errorMessage;

@@ -24,8 +24,8 @@ class UserSearchBloc extends Bloc<UserSearchEvent, UserSearchState> {
   ) async {
     emit(const UserSearchState.loading());
     try {
-      final user = await _userGitRepository.getUsers(event.userId);
-      emit(UserSearchState.data(user: user));
+      final userSearch = await _userGitRepository.getUsers(event.userId);
+      emit(UserSearchState.data(userSearch: userSearch));
     } catch (e, s) {
       log('Fetching user error', error: e, stackTrace: s);
       emit(const UserSearchState.error('Fetching user error'));
