@@ -8,7 +8,7 @@ class Repository {
   String language;
   String updatedAt;
   String defaultBranch;
-  
+
   Repository({
     required this.name,
     required this.description,
@@ -43,23 +43,23 @@ class Repository {
     return <String, dynamic>{
       'name': name,
       'description': description,
-      'forksCount': forksCount,
-      'stargazersCount': stargazersCount,
+      'forks_count': forksCount,
+      'stargazers_count': stargazersCount,
       'language': language,
-      'updatedAt': updatedAt,
-      'defaultBranch': defaultBranch,
+      'updated_at': updatedAt,
+      'default_branch': defaultBranch,
     };
   }
 
   factory Repository.fromMap(Map<String, dynamic> map) {
     return Repository(
-      name: map['name'] as String,
-      description: map['description'] as String,
-      forksCount: map['forksCount'] as int,
-      stargazersCount: map['stargazersCount'] as int,
-      language: map['language'] as String,
-      updatedAt: map['updatedAt'] as String,
-      defaultBranch: map['defaultBranch'] as String,
+      name: map['name'] ?? '',
+      description: map['description'] ?? '',
+      forksCount: map['forks_count'] ?? 0,
+      stargazersCount: map['stargazers_count'] ?? 0,
+      language: map['language'] ?? '',
+      updatedAt: map['updated_at'] ?? '',
+      defaultBranch: map['default_branch'] ?? '',
     );
   }
 

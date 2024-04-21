@@ -23,14 +23,18 @@ class UserGitRepository {
     }
   }
 
-  Future<Repository> getUserRepositories(String reposUrl) async {
+  Future<List<Repository>> getUserRepositories(String reposUrl) async {
     try {
       final url = Uri.parse(reposUrl);
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
-        return Repository.fromJson(json);
+        List<Repository> repositories = [];
+        for (var element in json) {
+          repositories.add(Repository.fromMap(element));
+        }
+        return repositories;
       } else {
         throw Exception("Fetching user's repositories error");
       }
