@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/presentation/screens/settings_screen/widgets/choose_language.dart';
+import 'package:github_search/presentation/screens/settings_screen/widgets/user_card.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -12,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: SingleChildScrollView(
             child: Column(
-          children: [ChooseLanguage()],
+          children: [UserCard(), ChooseLanguage()],
         )),
       ),
     );

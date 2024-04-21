@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:github_search/constants/network_constants.dart';
 import 'package:github_search/domain/models/repository.dart';
 
 import 'package:github_search/domain/models/user_search.dart';
@@ -27,8 +28,8 @@ class UserGitRepository {
 
   /// get/find users
   Future<UserSearch> getUsers(String userId) async {
-    final json =
-        await _fetchData('https://api.github.com/search/users?q=$userId');
+    final json = await _fetchData(
+        '${NetworkConstants.domainName}/search/users?q=$userId');
     return UserSearch.fromMap(json);
   }
 

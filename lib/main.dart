@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search/domain/blocs/authentication_bloc/authentication_bloc.dart';
 import 'package:github_search/domain/blocs/locale_bloc/locale_bloc.dart';
 import 'package:github_search/domain/blocs/user_search_bloc/user_search_bloc.dart';
 import 'package:github_search/data/repository/user_git_repository.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider<LocaleBloc>(
             create: (context) => LocaleBloc(),
+          ),
+          BlocProvider<AuthenticationBloc>(
+            create: (context) => AuthenticationBloc(),
           ),
         ],
         child: BlocBuilder<LocaleBloc, LocaleState>(

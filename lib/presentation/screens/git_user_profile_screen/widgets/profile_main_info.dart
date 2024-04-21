@@ -58,7 +58,7 @@ class ProfileMainInfo extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(
-                          Icons.person,
+                          Icons.people,
                           size: 20,
                         ),
                         const SizedBox(width: 5),

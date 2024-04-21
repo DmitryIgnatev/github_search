@@ -21,6 +21,7 @@ class ChooseLanguage extends StatelessWidget {
           children: [
             Text(
               localization!.language,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(5)),
