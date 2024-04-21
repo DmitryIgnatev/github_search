@@ -17,12 +17,11 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
     on<UserDetailsEvent>(_onUserDetailsLoadEvent);
   }
 
-    FutureOr<void> _onUserDetailsLoadEvent(
+  FutureOr<void> _onUserDetailsLoadEvent(
       UserDetailsEvent event, Emitter<UserDetailsState> emit) async {
     try {
       emit(const UserDetailsState.loading());
-      final userUrlModel =
-          await _userGitRepository.getUserInfo(event.userUrl);
+      final userUrlModel = await _userGitRepository.getUserInfo(event.userUrl);
       emit(UserDetailsState.loaded(userUrlModel: userUrlModel));
     } catch (e) {
       emit(UserDetailsState.error('$e'));

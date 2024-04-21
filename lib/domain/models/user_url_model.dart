@@ -58,19 +58,18 @@ class UserUrlModel {
   @override
   bool operator ==(covariant UserUrlModel other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.followers == followers &&
-      other.name == name &&
-      other.company == company &&
-      other.location == location;
+
+    return other.followers == followers &&
+        other.name == name &&
+        other.company == company &&
+        other.location == location;
   }
 
   @override
   int get hashCode {
     return followers.hashCode ^
-      name.hashCode ^
-      company.hashCode ^
-      location.hashCode;
+        name.hashCode ^
+        company.hashCode ^
+        location.hashCode;
   }
 }

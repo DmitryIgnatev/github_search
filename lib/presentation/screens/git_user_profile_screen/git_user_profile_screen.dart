@@ -37,18 +37,25 @@ class _GitUserProfileScreenState extends State<GitUserProfileScreen> {
         elevation: 0,
         title: Text(widget.user.login),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ProfileMainInfo(
-              user: widget.user,
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              leading: const SizedBox(),
+              expandedHeight: 150.0,
+              floating: false,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: ProfileMainInfo(
+                    user: widget.user,
+                  ),
+                ),
+              ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            RepositoriesGridView(user: widget.user)
+            SliverPadding(
+                padding: const EdgeInsets.all(10),
+                sliver: RepositoriesGridView(user: widget.user))
           ],
         ),
       ),

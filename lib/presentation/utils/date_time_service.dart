@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:intl/intl.dart';
 
 class DateTimeService {
+  /// Format ISO8601 String to Custom DateTime text
   static String formatIso8601ToCustom(String iso8601String) {
     try {
       DateTime dateTime = DateTime.parse(iso8601String);

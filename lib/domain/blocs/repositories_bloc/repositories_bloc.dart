@@ -16,7 +16,7 @@ class RepositoriesBloc extends Bloc<RepositoriesEvent, RepositoriesState> {
         super(const _Initial()) {
     on<RepositoriesEvent>(_onRepositoriesLoadEvent);
   }
-  
+
   FutureOr<void> _onRepositoriesLoadEvent(
       RepositoriesEvent event, Emitter<RepositoriesState> emit) async {
     try {

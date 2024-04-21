@@ -40,14 +40,20 @@ class ProfileMainInfo extends StatelessWidget {
                   children: [
                     Text(
                       userUrlModel.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
                     Text(userUrlModel.company,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.titleMedium),
                     Text(userUrlModel.location,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.titleMedium),
                     Row(
                       children: [
