@@ -7,22 +7,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:github_search/presentation/utils/date_time_service.dart';
 import 'package:github_search/presentation/utils/number_servise.dart';
 
-class RepositoriesGridView extends StatefulWidget {
+class RepositoriesGridView extends StatelessWidget {
   final User user;
   const RepositoriesGridView({super.key, required this.user});
-
-  @override
-  State<RepositoriesGridView> createState() => _RepositoriesGridViewState();
-}
-
-class _RepositoriesGridViewState extends State<RepositoriesGridView> {
-  @override
-  void initState() {
-    context
-        .read<RepositoriesBloc>()
-        .add(RepositoriesEvent.load(reposUrl: widget.user.reposUrl));
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

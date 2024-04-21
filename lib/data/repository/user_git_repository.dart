@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:github_search/domain/models/repository.dart';
-import 'package:github_search/domain/models/user.dart';
-import 'package:github_search/domain/models/user_detail.dart';
+
 import 'package:github_search/domain/models/user_search.dart';
 import 'package:github_search/domain/models/user_url_model.dart';
 import 'package:http/http.dart' as http;
@@ -26,17 +25,11 @@ class UserGitRepository {
     }
   }
 
-  Future<UserDetail> _getUserDetails(User user) async {
-    final json = await _fetchData(user.url);
-    UserUrlModel userInfo = UserUrlModel.fromJson(json);
-    return UserDetail(user: user, userInfo: userInfo);
-  }
-
   /// get/find users
   Future<UserSearch> getUsers(String userId) async {
     final json =
         await _fetchData('https://api.github.com/search/users?q=$userId');
-    return UserSearch.fromJson(json);
+    return UserSearch.fromMap(json);
   }
 
   /// get user repositories
@@ -48,15 +41,10 @@ class UserGitRepository {
     }
     return repositories;
   }
-  
-  Future<List<UserDetail>> getUsersWithDetails(String userId) async {
-    UserSearch userSearch = await getUsers(userId);
-    List<Future<UserDetail>> detailsFutures = [];
 
-    for (User user in userSearch.items) {
-      detailsFutures.add(_getUserDetails(user));
-    }
-    List<UserDetail> userDetails = await Future.wait(detailsFutures);
-    return userDetails;
+  /// get info from UserUrl
+  Future<UserUrlModel> getUserInfo(String userUrl) async {
+    final json = await _fetchData(userUrl);
+    return UserUrlModel.fromMap(json);
   }
 }

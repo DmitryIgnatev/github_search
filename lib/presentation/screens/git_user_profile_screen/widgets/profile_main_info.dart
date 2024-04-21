@@ -1,63 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search/domain/blocs/user_details_bloc/user_details_bloc.dart';
 import 'package:github_search/domain/models/user.dart';
+import 'package:github_search/presentation/utils/number_servise.dart';
 
-class ProfileMainInfo extends StatefulWidget {
+class ProfileMainInfo extends StatelessWidget {
   final User user;
   const ProfileMainInfo({super.key, required this.user});
 
   @override
-  State<ProfileMainInfo> createState() => _ProfileMainInfoState();
-}
-
-class _ProfileMainInfoState extends State<ProfileMainInfo> {
-
-  @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(45)),
-          child: SizedBox(
-            height: 150,
-            width: 150,
-            child: Image.network(
-              widget.user.avatarUrl,
-              fit: BoxFit.cover,
+    return BlocBuilder<UserDetailsBloc, UserDetailsState>(
+      builder: (context, state) {
+        return Row(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(45)),
+              child: SizedBox(
+                height: 150,
+                width: 150,
+                child: Image.network(
+                  user.avatarUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
-        ),
-        const SizedBox(width: 15),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Icon(Icons.person, color: Colors.indigo),
-                  const SizedBox(width: 15),
-                  Text(
-                    widget.user.login,
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 15),
-              Text(
-                'ID: ${widget.user.id}',
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
+            const SizedBox(width: 15),
+            Expanded(
+              child: state.when(
+                initial: () => const SizedBox(),
+                loading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+                error: (errorMessage) => Center(
+                  child: Text(errorMessage),
+                ),
+                loaded: (userUrlModel) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      userUrlModel.name,
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
+                    Text(userUrlModel.company,
+                        style: Theme.of(context).textTheme.titleMedium),
+                    Text(userUrlModel.location,
+                        style: Theme.of(context).textTheme.titleMedium),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.person,
+                          size: 20,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          NumberSevice.formatNumber(userUrlModel.followers),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                  ],
+                ),
               ),
-              const SizedBox(height: 15),
-              
-            ],
-          ),
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 }

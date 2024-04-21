@@ -9,9 +9,9 @@ class UserSearch {
     required this.items,
   });
 
-  factory UserSearch.fromJson(Map<String, dynamic> json) {
+  factory UserSearch.fromMap(Map<String, dynamic> json) {
     return UserSearch(
         totalCount: json['total_count'] ?? 0,
-        items: List.from(json['items']).map((e) => User.fromJson(e)).toList());
+        items: List.from(json['items']).map((e) => User.fromMap(e)).toList());
   }
 }

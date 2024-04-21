@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search/domain/blocs/repositories_bloc/repositories_bloc.dart';
+import 'package:github_search/domain/blocs/user_details_bloc/user_details_bloc.dart';
 import 'package:github_search/domain/models/user.dart';
 import 'package:github_search/presentation/screens/git_user_profile_screen/git_user_profile_screen.dart';
 
@@ -30,7 +33,21 @@ class UserGitListTile extends StatelessWidget {
         subtitle: Text(userGit.htmlUrl),
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => GitUserProfileScreen(user: userGit),
+            builder: (context) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) => RepositoriesBloc(
+                    userGitRepository: context.read(),
+                  ),
+                ),
+                BlocProvider(
+                  create: (context) => UserDetailsBloc(
+                    userGitRepository: context.read(),
+                  ),
+                ),
+              ],
+              child: GitUserProfileScreen(user: userGit),
+            ),
           ));
         },
       ),

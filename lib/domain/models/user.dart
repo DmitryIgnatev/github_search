@@ -14,7 +14,7 @@ class User {
       required this.url,
       required this.reposUrl});
 
-  factory User.fromJson(Map<String, dynamic> json) {
+  factory User.fromMap(Map<String, dynamic> json) {
     return User(
       login: json['login'] ?? '',
       id: json['id'] ?? 0,
