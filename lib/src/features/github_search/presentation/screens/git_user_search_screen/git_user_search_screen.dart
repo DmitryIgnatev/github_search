@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_search/src/features/github_search/domain/blocs/user_search_bloc/user_search_bloc.dart';
 import 'package:github_search/src/features/github_search/presentation/screens/git_user_search_screen/widgets/user_git_list_tile.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:github_search/src/features/github_search/presentation/screens/settings_screen/settings_screen.dart';
+import 'package:github_search/src/global/l10n/localization_helper.dart';
 
 class UserGitSearchView extends StatefulWidget {
   const UserGitSearchView({super.key});
@@ -24,7 +24,7 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context);
+    final localization = LocalizationHelper.getLocalizations(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -40,7 +40,7 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
           )
         ],
         title: Text(
-          localization!.app_name,
+          localization.app_name,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Theme.of(context).primaryColor,
               ),

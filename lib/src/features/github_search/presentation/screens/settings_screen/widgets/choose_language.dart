@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:github_search/src/features/github_search/domain/blocs/locale_bloc/locale_bloc.dart';
 import 'package:github_search/src/features/github_search/domain/models/app_localization.dart';
+import 'package:github_search/src/global/l10n/localization_helper.dart';
 
 class ChooseLanguage extends StatelessWidget {
   const ChooseLanguage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context);
+    final localization = LocalizationHelper.getLocalizations(context);
     return BlocBuilder<LocaleBloc, LocaleState>(
       builder: (context, state) {
         AppLanguage selectedLanguage =
@@ -20,7 +20,7 @@ class ChooseLanguage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              localization!.language,
+              localization.language,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             ClipRRect(

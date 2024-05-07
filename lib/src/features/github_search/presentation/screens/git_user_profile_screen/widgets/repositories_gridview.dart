@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:github_search/src/features/github_search/domain/blocs/repositories_bloc/repositories_bloc.dart';
 import 'package:github_search/src/features/github_search/domain/models/user.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:github_search/src/features/github_search/presentation/utils/date_time_service.dart';
 import 'package:github_search/src/features/github_search/presentation/utils/number_servise.dart';
+import 'package:github_search/src/global/l10n/localization_helper.dart';
 
 class RepositoriesGridView extends StatelessWidget {
   final User user;
@@ -14,7 +14,7 @@ class RepositoriesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final localization = AppLocalizations.of(context);
+    final localization = LocalizationHelper.getLocalizations(context);
     return BlocBuilder<RepositoriesBloc, RepositoriesState>(
       builder: (context, state) {
         return state.when(
@@ -106,7 +106,7 @@ class RepositoriesGridView extends StatelessWidget {
                                 ],
                               ),
                               Text(
-                                  "${localization!.language}: ${repository.language}"),
+                                  "${localization.language}: ${repository.language}"),
                               Text(
                                 DateTimeService.formatIso8601ToCustom(
                                     repository.updatedAt),
