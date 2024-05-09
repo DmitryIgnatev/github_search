@@ -1,16 +1,17 @@
-# github_search
+# GitHub Search
 
-A new Flutter project.
+The application requests the GitHub public search API. This application makes a filter by username, returning the users found in the search. When you click on a user, the application opens a new screen with additional information about the selected user, as well as the public repositories of this user. The application also supports localization in 2 languages: Russian and English.
 
-## Getting Started
+### GitHub REST API documentation
 
-This project is a starting point for a Flutter application.
+https://docs.github.com/en/rest
 
-A few resources to get you started if this is your first Flutter project:
+### Technology stack
+- state management: `bloc + freezed`
+- persistence `shared_preferences`
+- localization: `intl + flutter_localizations`
+- network: `http`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### An example of how it works
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Users/dmitryignatev/Downloads/github%20seacrh.mp4](https://github.com/DmitryIgnatev/github_search/assets/106831531/b5c25da5-8d86-46ae-a0d6-67485d8f2901)
