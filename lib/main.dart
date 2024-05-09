@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:github_search/src/features/github_search/domain/blocs/locale_bloc/locale_bloc.dart';
-import 'package:github_search/src/features/github_search/domain/blocs/user_search_bloc/user_search_bloc.dart';
-import 'package:github_search/src/features/github_search/data/repository/user_git_repository.dart';
-import 'package:github_search/src/features/github_search/presentation/screens/git_user_search_screen/git_user_search_screen.dart';
+import 'package:github_search/src/app/domain/blocs/locale_bloc/locale_bloc.dart';
+import 'package:github_search/src/app/domain/blocs/user_search_bloc/user_search_bloc.dart';
+import 'package:github_search/src/app/data/repository/user_git_repository.dart';
+import 'package:github_search/src/app/presentation/screens/git_user_search_screen/git_user_search_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:github_search/src/api/api.dart';
 import 'package:http/http.dart' as http;
